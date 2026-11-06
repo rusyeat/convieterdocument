@@ -1,0 +1,21 @@
+{
+  "name": "qalam-pdf",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Qalam PDF — in-browser PDF tools (convert, edit, sign). No server, files never leave the device.",
+  "license": "MIT",
+  "scripts": {
+    "start": "node tests/serve.js",
+    "test": "node --test tests/unit.test.js",
+    "test:e2e": "node --test tests/e2e.test.js",
+    "test:all": "node --test tests/"
+  },
+  "devDependencies": {
+    "@pdf-lib/fontkit": "1.1.1",
+    "jszip": "3.10.1",
+    "pdf-lib": "1.17.1",
+    "pdfjs-dist": "3.11.174",
+    "puppeteer-core": "22.15.0",
+    "xlsx": "0.18.5"
+  }
+}

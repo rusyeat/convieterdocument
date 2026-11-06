@@ -1,6 +1,6 @@
 // Minimal .docx builder. Takes a list of blocks and returns a Blob.
 // Block: { type: "p", runs: [{ text, size, bold, italic }], align, heading } | { type: "pagebreak" }
-(function () {
+(function (root) {
   function esc(s) {
     return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
       // drop characters that are invalid in XML 1.0
@@ -53,7 +53,7 @@ ${heading(1, 36)}${heading(2, 28)}${heading(3, 24)}
     const body = blocks.map(blockXml).join("");
     const doc = `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"><w:body>${body}<w:sectPr><w:pgSz w:w="${w}" w:h="${h}"/><w:pgMar w:top="1134" w:right="1134" w:bottom="1134" w:left="1134" w:header="708" w:footer="708" w:gutter="0"/></w:sectPr></w:body></w:document>`;
-    const zip = new JSZip();
+    const zip = new root.JSZip();
     zip.file("[Content_Types].xml", CT);
     zip.file("_rels/.rels", RELS);
     zip.file("word/_rels/document.xml.rels", DOC_RELS);
@@ -62,5 +62,5 @@ ${heading(1, 36)}${heading(2, 28)}${heading(3, 24)}
     return zip.generateAsync({ type: "blob", mimeType: "application/vnd.openxmlformats-officedocument.wordprocessingml.document" });
   }
 
-  window.buildDocx = buildDocx;
-})();
+  root.buildDocx = buildDocx;
+})(typeof window !== "undefined" ? window : globalThis);

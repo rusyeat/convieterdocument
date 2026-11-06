@@ -1,147 +1,35 @@
 <!doctype html>
-<html lang="en">
+<html lang="kk">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>PaperShift — Convert PDF to Word</title>
-<meta name="description" content="Free PDF to Word converter that runs entirely in your browser. Your files never leave your device.">
+<title>Qalam PDF — PDF құралдары</title>
+<meta name="description" content="Qalam PDF: PDF түрлендіру, өңдеу және қол қою. Барлығы браузерде, файлдар ешқайда жіберілмейді.">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<style>
+  @font-face { font-family: "Noto Sans"; src: url("assets/fonts/NotoSans-Regular.ttf") format("truetype"); font-weight: 400; font-display: swap; }
+  @font-face { font-family: "Noto Sans"; src: url("assets/fonts/NotoSans-Bold.ttf") format("truetype"); font-weight: 700; font-display: swap; }
+</style>
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<header class="hdr" id="hdr"></header>
+<main id="app"></main>
+<footer class="ftr" id="ftr"></footer>
+<noscript><p style="padding:24px;text-align:center">Qalam PDF requires JavaScript.</p></noscript>
 
-<header class="nav">
-  <div class="wrap nav-in">
-    <a class="logo" href="#"><span class="logo-mark">P</span>PaperShift</a>
-    <nav class="links" id="links">
-      <a href="#tools">PDF Converter</a>
-      <a href="#how">How it works</a>
-      <a href="#why">Why us</a>
-      <a href="#faq">FAQ</a>
-    </nav>
-    <a class="btn btn-ghost nav-cta" href="#convert">Convert now</a>
-    <button class="burger" id="burger" aria-label="Menu">☰</button>
-  </div>
-</header>
-
-<main>
-  <section class="hero" id="convert">
-    <div class="wrap">
-      <p class="crumbs">Home › Convert PDF to Word</p>
-      <h1>Convert PDF to Word</h1>
-      <p class="sub">Turn any PDF into an editable .docx in seconds. Free, no sign-up — conversion happens right in your browser.</p>
-
-      <div class="drop" id="drop" tabindex="0">
-        <input type="file" id="file" accept="application/pdf,.pdf" hidden>
-        <div class="drop-idle" id="idle">
-          <div class="drop-icon">
-            <svg viewBox="0 0 48 48" width="56" height="56" aria-hidden="true"><path d="M12 4h17l11 11v27a2 2 0 0 1-2 2H12a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" fill="var(--pdf)"/><path d="M29 4v9a2 2 0 0 0 2 2h9" fill="#fff" opacity=".45"/><text x="25" y="35" font-size="10" font-weight="800" fill="#fff" text-anchor="middle" font-family="Inter,sans-serif">PDF</text></svg>
-            <span class="arrow">→</span>
-            <svg viewBox="0 0 48 48" width="56" height="56" aria-hidden="true"><path d="M12 4h17l11 11v27a2 2 0 0 1-2 2H12a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" fill="var(--doc)"/><path d="M29 4v9a2 2 0 0 0 2 2h9" fill="#fff" opacity=".45"/><text x="25" y="35" font-size="9" font-weight="800" fill="#fff" text-anchor="middle" font-family="Inter,sans-serif">DOCX</text></svg>
-          </div>
-          <button class="btn btn-primary" id="pick">Upload your file</button>
-          <p class="muted">or drop your PDF here · up to 100 MB</p>
-        </div>
-        <div class="drop-busy" id="busy" hidden>
-          <p class="fname" id="fname"></p>
-          <div class="bar"><div class="bar-fill" id="barFill"></div></div>
-          <p class="muted" id="status">Reading file…</p>
-        </div>
-        <div class="drop-done" id="done" hidden>
-          <p class="ok">✓ Your Word file is ready</p>
-          <p class="fname" id="outName"></p>
-          <div class="row">
-            <a class="btn btn-primary" id="dl">Download .docx</a>
-            <button class="btn btn-ghost" id="again">Convert another</button>
-          </div>
-          <p class="muted small" id="note"></p>
-        </div>
-        <p class="err" id="err" hidden></p>
-      </div>
-      <p class="lock">🔒 Files are processed locally and never uploaded to a server.</p>
-    </div>
-  </section>
-
-  <section class="sec" id="tools">
-    <div class="wrap">
-      <h2>One place for your PDF tools</h2>
-      <div class="groups">
-        <div class="group">
-          <h3>Edit &amp; Sign</h3>
-          <ul class="tiles">
-            <li class="soon">Edit PDF</li><li class="soon">Split</li><li class="soon">Merge</li><li class="soon">Compress</li>
-            <li class="soon">Watermark</li><li class="soon">Rotate</li><li class="soon">Sign</li>
-          </ul>
-        </div>
-        <div class="group">
-          <h3>Convert from PDF</h3>
-          <ul class="tiles">
-            <li class="on"><a href="#convert">PDF to Word</a></li><li class="soon">PDF to JPG</li><li class="soon">PDF to Excel</li><li class="soon">PDF to PPT</li>
-          </ul>
-        </div>
-        <div class="group">
-          <h3>Convert to PDF</h3>
-          <ul class="tiles">
-            <li class="soon">Word to PDF</li><li class="soon">JPG to PDF</li><li class="soon">Excel to PDF</li><li class="soon">PPT to PDF</li>
-          </ul>
-        </div>
-      </div>
-      <p class="muted center">Tools marked “soon” are coming in later versions.</p>
-    </div>
-  </section>
-
-  <section class="sec alt" id="how">
-    <div class="wrap">
-      <h2>Convert your file in 3 simple steps</h2>
-      <ol class="steps">
-        <li><span>1</span><h3>Upload</h3><p>Pick a PDF or drag it into the box above.</p></li>
-        <li><span>2</span><h3>Convert</h3><p>We read the text and layout and rebuild it as a Word document.</p></li>
-        <li><span>3</span><h3>Download</h3><p>Save the editable .docx and open it in Word, Google Docs or LibreOffice.</p></li>
-      </ol>
-    </div>
-  </section>
-
-  <section class="sec" id="why">
-    <div class="wrap">
-      <h2>Why choose PaperShift?</h2>
-      <div class="cards">
-        <div class="card"><div class="ci">⚡</div><h3>Fast and free</h3><p>No account, no subscription, no waiting in a queue.</p></div>
-        <div class="card"><div class="ci">🔒</div><h3>Private by design</h3><p>Your document stays on your device. Nothing is sent anywhere.</p></div>
-        <div class="card"><div class="ci">📝</div><h3>Editable output</h3><p>Headings, paragraphs and page breaks are kept so you can edit straight away.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="sec alt" id="faq">
-    <div class="wrap narrow">
-      <h2>Frequently asked questions</h2>
-      <details><summary>What is PaperShift?</summary><p>A free online toolkit for working with PDF files. Version 0.1 converts PDF documents into editable Word (.docx) files.</p></details>
-      <details><summary>Are my files safe?</summary><p>Yes. Conversion runs in your browser with JavaScript. The file is never uploaded, so nobody else can see it.</p></details>
-      <details><summary>Which devices are supported?</summary><p>Any modern browser on Windows, macOS, Linux, Android or iOS.</p></details>
-      <details><summary>Does it work with scanned PDFs?</summary><p>Not yet. Scanned pages are images with no text layer; OCR support is planned for a later version.</p></details>
-      <details><summary>Is it really free?</summary><p>Yes. There is no sign-up, no trial and no payment.</p></details>
-    </div>
-  </section>
-
-  <section class="sec cta">
-    <div class="wrap center">
-      <h2>Convert your files in seconds</h2>
-      <a class="btn btn-light" href="#convert">Upload your file</a>
-    </div>
-  </section>
-</main>
-
-<footer class="foot">
-  <div class="wrap foot-in">
-    <div><a class="logo" href="#"><span class="logo-mark">P</span>PaperShift</a><p class="muted small">v0.1 · Open source · Made with pdf.js and JSZip</p></div>
-    <p class="muted small">© 2026 PaperShift. All conversions happen locally in your browser.</p>
-  </div>
-</footer>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
-<script src="docx-writer.js"></script>
-<script src="app.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/docx.js"></script>
+<script src="js/core.js"></script>
+<script src="js/classifier.js"></script>
+<script src="js/store.js"></script>
+<script src="js/tools.js"></script>
+<script src="js/editor.js"></script>
+<script src="js/forms.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>

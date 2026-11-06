@@ -1,0 +1,37 @@
+text,label,lang
+"ЖАЛДАУ ШАРТЫ. Жалға беруші тұрғын үй-жайды ай сайынғы 150 000 теңге төлеммен береді. Жалға алушы коммуналдық төлемдерді өзі өтейді. Шарт бір жылға жасалады.",contract,kk
+"Қызмет көрсету шарты бойынша Орындаушы веб-сайт әзірлейді, ал Тапсырыс беруші жұмысты қабылдап, ақысын төлейді. Даулар келіссөз жолымен шешіледі.",contract,kk
+"ДОГОВОР ПОСТАВКИ. Поставщик обязуется поставить оборудование в срок до 1 декабря, а Покупатель — принять и оплатить его. Споры рассматриваются в суде по месту нахождения истца.",contract,ru
+"Договор аренды автомобиля. Арендатор несет ответственность за сохранность транспортного средства. Арендная плата вносится ежемесячно.",contract,ru
+"SERVICE AGREEMENT. The Provider will deliver software maintenance for twelve months. The Customer will pay a monthly fee. Either party may terminate with thirty days written notice.",contract,en
+"Employment contract. The Employer hires the Employee as an accountant. Working hours are 40 per week. Salary is paid twice a month. Governing law: Republic of Kazakhstan.",contract,en
+"Физика факультетінің деканына, 2-курс студентінен. Өтініш. Маған емтиханды қайта тапсыруға рұқсат беруіңізді сұраймын, себебі ауырып қалдым. Анықтама қоса беріліп отыр.",application,kk
+"Мектеп директорына. Ұлымды 5-сыныпқа ауыстыруыңызды өтінемін. Ата-анасы, қолы.",application,kk
+"Начальнику отдела кадров. Заявление. Прошу перевести меня на должность старшего специалиста с 1 ноября. Подпись, дата.",application,ru
+"Декану факультета. Прошу разрешить пересдачу экзамена по уважительной причине. Медицинская справка прилагается.",application,ru
+"To the Head of HR. I would like to request a transfer to the Almaty branch starting next month. Thank you for considering my request.",application,en
+"Application for a parking permit. I kindly ask to be granted a permit for the university car park for the autumn semester.",application,en
+"ТӨЛЕМ ШОТЫ № 87. Жеткізуші ЖШС. Ноутбук — 2 дана, бағасы 350 000, сомасы 700 000. Барлығы: 700 000 теңге, оның ішінде ҚҚС.",invoice,kk
+"Орындалған қызметтер үшін шот. Кеңес беру — 10 сағат × 20 000 = 200 000 теңге. Төлеуге: 200 000 теңге.",invoice,kk
+"СЧЕТ № 512. Поставщик: ТОО. Бумага офисная — 20 пачек по 2 100 тенге. Всего наименований 1, на сумму 42 000 тенге. Оплатить до 30.11.",invoice,ru
+"Счет на оплату консультационных услуг. Количество часов: 10. Ставка: 20 000 тенге. Сумма без НДС и с НДС указана ниже.",invoice,ru
+"INVOICE #2291. Web hosting annual plan — 1 × 240.00 USD. Domain renewal — 1 × 15.00 USD. Subtotal 255.00 USD. Tax 0. Total due 255.00 USD.",invoice,en
+"Bill for catering services. 50 lunches at 8 USD each. Amount payable: 400 USD. Please transfer to the account below.",invoice,en
+"Түйіндеме. Аты-жөні: А. Н. Мамандығы: дизайнер. 3 жыл тәжірибе, Figma, Photoshop. Ағылшын тілі — орта деңгей. Жүргізуші куәлігі бар.",resume,kk
+"Мен туралы: студентпін, деректерді талдауға қызығамын. Тағылымдама: 2025 ж. жазғы практика банкте. Дағдылар: pandas, Power BI.",resume,kk
+"РЕЗЮМЕ. Желаемая должность: менеджер по продажам. Опыт: 5 лет в розничной торговле. Навыки: переговоры, CRM. Образование высшее экономическое.",resume,ru
+"О себе: коммуникабелен, быстро обучаюсь. Опыт стажировки в IT-компании. Владею Java и Git. Английский — upper-intermediate.",resume,ru
+"CV. Marketing specialist with 4 years of experience in social media campaigns. Skills: SEO, Google Analytics, copywriting. Education: BA in Journalism.",resume,en
+"Profile: data science student seeking an internship. Projects: price prediction model, chatbot. Tools: scikit-learn, TensorFlow. Volunteer experience.",resume,en
+"Мақалада қазақ тіліндегі мәтіндерді автоматты жіктеу мәселесі зерттеледі. Ұсынылған модельдің дәлдігі 92% болды. Болашақ зерттеулер бағыты талқыланады.",academic,kk
+"Дипломдық жұмыс. Бірінші тарауда теориялық негіздер, екінші тарауда практикалық бөлім берілген. Әдебиеттер саны — 35.",academic,kk
+"В данной работе предложен алгоритм оптимизации маршрутов. Проведено сравнение с существующими подходами. Выводы и направления дальнейших исследований.",academic,ru
+"Реферат по дисциплине «История Казахстана». Содержание: введение, две главы, заключение, библиография.",academic,ru
+"We propose a lightweight neural network for crop disease detection. Experiments on a public dataset show an F1-score of 0.91. Limitations and future work are discussed.",academic,en
+"Thesis chapter 2: Methodology. Data were collected through an online survey of 300 respondents and analysed with regression.",academic,en
+"Құрметті Айгүл Серікқызы! Сізге конференцияны ұйымдастыруға қосқан үлесіңіз үшін шын жүректен алғыс айтамыз. Құрметпен, ұйымдастыру комитеті.",letter,kk
+"Сіздің 12 қазандағы сұрауыңызға сәйкес қажетті мәліметтер қоса жолданып отыр. Қосымша сұрақтар болса, хабарласыңыз.",letter,kk
+"Уважаемый Иван Петрович! Направляем Вам проект плана мероприятий для ознакомления. Просим сообщить замечания до пятницы. С уважением.",letter,ru
+"Информационное письмо. Сообщаем, что офис компании переезжает по новому адресу с 1 декабря.",letter,ru
+"Dear Ms. Smith, Further to our telephone conversation, I am writing to confirm the details of our partnership meeting. Kind regards, Project Manager.",letter,en
+"Dear Sir or Madam, We regret to inform you that the seminar has been postponed. A new date will be announced soon. Yours faithfully.",letter,en

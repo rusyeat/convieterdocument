@@ -1,0 +1,90 @@
+{
+  "seed": 42,
+  "dataset": {
+    "train": 864,
+    "validation": 216,
+    "handwritten_test": 36,
+    "classes": [
+      "academic",
+      "application",
+      "contract",
+      "invoice",
+      "letter",
+      "resume"
+    ],
+    "languages": [
+      "kk",
+      "ru",
+      "en"
+    ]
+  },
+  "grid_search": {
+    "param": "C",
+    "values": [
+      0.3,
+      1,
+      3,
+      10,
+      30,
+      100
+    ],
+    "scoring": "log-loss",
+    "best": 100,
+    "cv_log_loss": 0.0085
+  },
+  "validation": {
+    "logreg_char": {
+      "accuracy": 1.0,
+      "precision_macro": 1.0,
+      "recall_macro": 1.0,
+      "f1_macro": 1.0
+    },
+    "naive_bayes_word": {
+      "accuracy": 1.0,
+      "precision_macro": 1.0,
+      "recall_macro": 1.0,
+      "f1_macro": 1.0
+    }
+  },
+  "handwritten_test": {
+    "logreg_char": {
+      "accuracy": 0.9722,
+      "precision_macro": 0.9762,
+      "recall_macro": 0.9722,
+      "f1_macro": 0.972
+    },
+    "naive_bayes_word": {
+      "accuracy": 0.8333,
+      "precision_macro": 0.8611,
+      "recall_macro": 0.8333,
+      "f1_macro": 0.8332
+    },
+    "per_language": {
+      "kk": {
+        "accuracy": 0.9167,
+        "precision_macro": 0.9444,
+        "recall_macro": 0.9167,
+        "f1_macro": 0.9111
+      },
+      "ru": {
+        "accuracy": 1.0,
+        "precision_macro": 1.0,
+        "recall_macro": 1.0,
+        "f1_macro": 1.0
+      },
+      "en": {
+        "accuracy": 1.0,
+        "precision_macro": 1.0,
+        "recall_macro": 1.0,
+        "f1_macro": 1.0
+      }
+    },
+    "errors": [
+      {
+        "text": "Мен туралы: студентпін, деректерді талдауға қызығамын. Тағылымдама: 2025 ж. жазғы практика",
+        "true": "resume",
+        "pred": "academic"
+      }
+    ]
+  }
+}
