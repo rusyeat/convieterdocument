@@ -384,3 +384,28 @@ input, select, textarea { background-color: var(--surface); }
   .hdr-right .pill-btn:not(.theme-toggle) { padding-inline: 8px; }
   .ed-top { gap: 6px; flex-wrap: wrap; }
 }
+
+/* Full-viewport purple curtain: rounded edges, a lit rim and a deep moving shadow. */
+.theme-wave {
+  position: fixed;
+  z-index: 2147483647;
+  pointer-events: none;
+  left: -20vw;
+  top: -12vh;
+  width: 140vw;
+  height: 124vh;
+  border-radius: 50% / 7%;
+  background: linear-gradient(165deg, #382078 0%, #6236df 40%, #8555f2 78%, #b99aff 100%);
+  box-shadow: 0 28px 65px rgba(35, 12, 86, .45), inset 0 -5px 3px rgba(226, 211, 255, .7),
+    inset 0 -24px 36px rgba(181, 135, 255, .55);
+  will-change: transform;
+}
+.theme-wave-up {
+  background: linear-gradient(345deg, #382078 0%, #6236df 40%, #8555f2 78%, #b99aff 100%);
+  box-shadow: 0 -28px 65px rgba(35, 12, 86, .45), inset 0 5px 3px rgba(226, 211, 255, .7),
+    inset 0 24px 36px rgba(181, 135, 255, .55);
+}
+@media (prefers-reduced-motion: reduce) {
+  .theme-wave { display: none; }
+}
+
