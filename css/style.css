@@ -384,28 +384,56 @@ input, select, textarea { background-color: var(--surface); }
   .hdr-right .pill-btn:not(.theme-toggle) { padding-inline: 8px; }
   .ed-top { gap: 6px; flex-wrap: wrap; }
 }
-
-/* Full-viewport purple curtain: rounded edges, a lit rim and a deep moving shadow. */
-.theme-wave {
-  position: fixed;
-  z-index: 2147483647;
-  pointer-events: none;
-  left: -20vw;
-  top: -12vh;
-  width: 140vw;
-  height: 124vh;
-  border-radius: 50% / 7%;
-  background: linear-gradient(165deg, #382078 0%, #6236df 40%, #8555f2 78%, #b99aff 100%);
-  box-shadow: 0 28px 65px rgba(35, 12, 86, .45), inset 0 -5px 3px rgba(226, 211, 255, .7),
-    inset 0 -24px 36px rgba(181, 135, 255, .55);
-  will-change: transform;
+/* Theme palettes only; preserve the original layout and component geometry. */
+:root {
+  --surface: #ffffff;
+  --header: rgba(255,255,255,.94);
+  --bg: #f4f3fb;
+  --card: #ffffff;
+  --text: #242133;
+  --muted: #625e73;
+  --line: #e5e1ee;
+  --brand: #7050d8;
+  --brand-dark: #593ab9;
+  --brand-soft: #eee8fc;
+  --brand-soft2: #f6f2ff;
+  --hero-glow: #e5dafa;
+  --workspace: #ebe8f2;
+  --table-head: #f7f5fc;
+  --shadow: 0 10px 30px rgba(62,37,116,.07);
 }
-.theme-wave-up {
-  background: linear-gradient(345deg, #382078 0%, #6236df 40%, #8555f2 78%, #b99aff 100%);
-  box-shadow: 0 -28px 65px rgba(35, 12, 86, .45), inset 0 5px 3px rgba(226, 211, 255, .7),
-    inset 0 24px 36px rgba(181, 135, 255, .55);
+:root[data-theme="dark"] {
+  --surface: #191620;
+  --header: rgba(25,22,32,.94);
+  --bg: #110f17;
+  --card: #191620;
+  --text: #f2eef9;
+  --muted: #b8aec8;
+  --line: #393044;
+  --brand: #b69bf2;
+  --brand-dark: #6b43c2;
+  --brand-soft: #322343;
+  --brand-soft2: #261d33;
+  --hero-glow: #392448;
+  --workspace: #100e16;
+  --table-head: #241c2e;
+  --ok-soft: #173327;
+  --danger: #ff929b;
+  --shadow: 0 10px 30px rgba(0,0,0,.23);
+}
+:root[data-theme="dark"] .btn-primary,
+:root[data-theme="dark"] .chip.on,
+:root[data-theme="dark"] .seg button.on,
+:root[data-theme="dark"] .toggle button.on { background: #7950d3; }
+:root[data-theme="dark"] .btn-primary:hover { background: #6840be; }
+.theme-changing body, .theme-changing .hdr, .theme-changing .ftr,
+.theme-changing .tcard, .theme-changing .drop, .theme-changing .quick,
+.theme-changing .panel, .theme-changing .ed, .theme-changing .ed-canvas,
+.theme-changing .pill-btn, .theme-changing .tool-box, .theme-changing .modal,
+.theme-changing .fcard, .theme-changing .feat, .theme-changing .tbl,
+.theme-changing input, .theme-changing select, .theme-changing textarea {
+  transition: background-color 450ms ease, color 450ms ease, border-color 450ms ease, box-shadow 450ms ease;
 }
 @media (prefers-reduced-motion: reduce) {
-  .theme-wave { display: none; }
+  .theme-changing * { transition: none !important; }
 }
-
