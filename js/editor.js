@@ -21,6 +21,7 @@
 
     root.innerHTML = `<div class="ed">
       <div class="ed-top"><a class="logo" href="#/">${UI.logo}<span>Qalam PDF</span></a><span class="fname" id="fn"></span><span class="sp"></span>
+        ${UI.themeButton()}
         <button class="icon-btn" id="undo" title="Undo">${svg("undo")}</button><button class="icon-btn" id="redo" title="Redo">${svg("redo")}</button>
         <button class="btn btn-outline btn-sm" id="openBtn">${t("ed_open")}</button>
         <button class="btn btn-primary btn-sm" id="save" disabled>${svg("download", 'width="18"')} ${t("download")}</button></div>

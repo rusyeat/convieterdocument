@@ -2,6 +2,7 @@
 // Values may contain <em>…</em> for the purple accent word.
 window.I18N = {
 kk: {
+  theme_dark: "Қараңғы тақырып",
   _name: "Қазақша",
   nav_tools: "Құралдар", nav_editor: "Редактор", nav_forms: "Формалар", nav_pricing: "Тарифтер", nav_login: "Кіру", nav_files: "Менің файлдарым",
   hero_title: "PDF-пен жұмыс<br>істеу <em>оңай.</em>", hero_sub: "Түрлендіріңіз, өңдеңіз және қол қойыңыз — бір жерде.",
@@ -47,6 +48,7 @@ kk: {
   choose_lang: "Тілді таңдаңыз", search_lang: "Тіл іздеу", close: "Жабу", home: "Басты бет", popular_tools: "Танымал құралдар"
 },
 en: {
+  theme_dark: "Dark theme",
   _name: "English",
   nav_tools: "Tools", nav_editor: "Editor", nav_forms: "Forms", nav_pricing: "Pricing", nav_login: "Log in", nav_files: "My files",
   hero_title: "Working with PDF<br>made <em>easy.</em>", hero_sub: "Convert, edit and sign — all in one place.",
@@ -92,6 +94,7 @@ en: {
   choose_lang: "Choose language", search_lang: "Search language", close: "Close", home: "Home", popular_tools: "Popular tools"
 },
 ru: {
+  theme_dark: "Тёмная тема",
   _name: "Русский",
   nav_tools: "Инструменты", nav_editor: "Редактор", nav_forms: "Формы", nav_pricing: "Тарифы", nav_login: "Войти", nav_files: "Мои файлы",
   hero_title: "Работать с PDF<br><em>легко.</em>", hero_sub: "Конвертируйте, редактируйте и подписывайте — в одном месте.",

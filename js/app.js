@@ -19,6 +19,7 @@
         <a href="#/files" data-nav="files">${t("nav_files")}</a>
       </nav>
       <div class="hdr-right">
+        ${UI.themeButton()}
         <button class="pill-btn" id="langBtn">${svg("globe", 'width="16"')} ${UI.esc(LANG_CODE[UI.lang])} ${svg("chevron", 'width="14"')}</button>
         <button class="pill-btn login-btn" id="loginBtn">${t("nav_login")}</button>
         <button class="burger" id="burger" aria-label="menu">${svg("menu", 'width="24"')}</button>
