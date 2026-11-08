@@ -1,0 +1,70 @@
+<!doctype html><html lang="kk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Qalam assistant preview</title><style>.qa-host { position: fixed; right: 22px; bottom: 22px; z-index: 90; font: 14px/1.5 Inter,system-ui,sans-serif; color: var(--text,#242133); }
+.qa-launch { display: grid; place-items: center; margin-inline-start: auto; width: 54px; height: 54px; border: 1px solid #bfa2ff; border-radius: 18px; background: #7950d3; color: #fff; font-size: 29px; cursor: pointer; box-shadow: 0 8px 28px #50318c44; }
+.qa-panel { width: min(380px,calc(100vw - 32px)); height: min(570px,calc(100dvh - 108px)); margin-bottom: 12px; display: flex; flex-direction: column; border: 1px solid var(--line,#ddd); border-radius: 20px; background: var(--surface,#fff); box-shadow: 0 16px 60px #0003; overflow: hidden; }
+.qa-panel[hidden] { display: none; }
+.qa-head { display:flex; gap:10px; align-items:center; padding:16px; border-bottom:1px solid var(--line,#ddd); }
+.qa-head strong { flex:1; font-size:14px; }
+.qa-head button { background:transparent; border:0; color:var(--muted,#625e73); cursor:pointer; font-size:12px; padding:6px; }
+.qa-head .qa-close { font-size:24px; line-height:1; }
+.qa-notice { font-size:11px; line-height:1.5; color:var(--muted,#625e73); margin:12px 16px; }
+.qa-log { flex:1; min-height:80px; overflow:auto; padding:0 16px 10px; display:flex; flex-direction:column; gap:10px; }
+.qa-message { flex:none; border-radius:14px; padding:11px 13px; white-space:pre-wrap; overflow-wrap:anywhere; max-width:92%; font-size:13px; }
+.qa-assistant { background:var(--brand-soft2,#f6f2ff); align-self:flex-start; }
+.qa-user { background:#7950d3; color:#fff; align-self:flex-end; }
+.qa-suggest { display:flex; flex-direction:column; gap:6px; padding:0 16px; }
+.qa-suggest button { text-align:start; padding:8px 10px; border:1px solid var(--line,#ddd); border-radius:9px; background:transparent; color:var(--text,#242133); font:inherit; font-size:11px; cursor:pointer; }
+.qa-status { color:var(--muted,#625e73); font-size:11px; padding:0 16px; margin:7px 0; min-height:16px; }
+.qa-form { border-top:1px solid var(--line,#ddd); padding:12px; display:flex; gap:8px; align-items:flex-end; }
+.qa-input-label { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); }
+.qa-form textarea { width:100%; min-width:0; resize:none; border:1px solid var(--line,#ddd); border-radius:10px; padding:9px; color:var(--text,#242133); background:var(--surface,#fff); font:inherit; font-size:13px; }
+.qa-send { background:#7950d3; color:#fff; border:0; border-radius:10px; padding:11px; font:inherit; font-size:11px; cursor:pointer; }
+.qa-host button:disabled { opacity:.55; cursor:wait; }
+.qa-host :focus-visible { outline:2px solid var(--brand,#7050d8); outline-offset:3px; }
+[dir=rtl] .qa-host { right:auto; left:22px; }
+@media(max-width:480px) { .qa-host { right:16px; bottom:16px; } .qa-launch { width:48px; height:48px; } }
+</style><style>:root{--surface:#191620;--text:#f2eef9;--muted:#b8aec8;--line:#393044;--brand-soft2:#261d33;--brand:#b69bf2}body{background:#110f17;color:#f2eef9;font:18px system-ui;padding:30px}</style></head><body><h1>Qalam PDF</h1><p>Көмекші чатын ашу үшін төмендегі ✦ батырмасын басыңыз.</p><script>window.UI={lang:'kk'};</script><script>window.QALAM_ASSISTANT_URL="";</script><script>(function () {
+  const copy = {
+    kk: {title:'Qalam көмекші',open:'Көмекшімен сөйлесу',close:'Жабу',clear:'Тазалау',placeholder:'Сұрағыңызды жазыңыз…',send:'Жіберу',hello:'Сәлем! PDF түрлендіру, біріктіру және өңдеу бойынша көмектесемін.',notice:'Хабарламаларыңыз жауап алу үшін OpenAI-ға жіберіледі. Файлдар автоматты жіберілмейді.',wait:'Жауап дайындап жатырмын…',error:'Қазір жауап алу мүмкін болмады. Қайта жіберіп көріңіз.',limit:'Сұрау лимиті бітті. Кейінірек қайталаңыз.',setup:'Көмекші сервері әлі қосылмаған.',suggest:['PDF-ті Word-қа қалай айналдырамын?','PDF файлдарын қалай біріктіремін?','Құжатқа қалай қол қоямын?']},
+    ru: {title:'Помощник Qalam',open:'Открыть помощника',close:'Закрыть',clear:'Очистить',placeholder:'Напишите вопрос…',send:'Отправить',hello:'Привет! Помогу с конвертацией, объединением и редактированием PDF.',notice:'Для ответа ваши сообщения отправляются в OpenAI. Файлы автоматически не передаются.',wait:'Готовлю ответ…',error:'Не удалось получить ответ. Попробуйте отправить снова.',limit:'Достигнут лимит запросов. Попробуйте позже.',setup:'Сервер помощника ещё не подключён.',suggest:['Как перевести PDF в Word?','Как объединить PDF?','Как подписать документ?']},
+    en: {title:'Qalam assistant',open:'Open assistant',close:'Close',clear:'Clear',placeholder:'Ask a question…',send:'Send',hello:'Hi! I can help with PDF conversion, merging and editing.',notice:'Your messages are sent to OpenAI to generate replies. Files are not sent automatically.',wait:'Preparing a reply…',error:'Could not get a reply. Please send again.',limit:'Request limit reached. Please try later.',setup:'The assistant server is not connected yet.',suggest:['How do I convert PDF to Word?','How do I merge PDFs?','How do I sign a document?']}
+  };
+  let history = [], pending = false, controller;
+  const getCopy = () => copy[window.UI?.lang] || copy.en;
+  const host = document.createElement('div'); host.className='qa-host';
+  const launch = document.createElement('button');launch.type='button';launch.className='qa-launch';launch.textContent='✦';launch.setAttribute('aria-expanded','false');launch.setAttribute('aria-controls','qa-panel');
+  const panel = document.createElement('section');panel.id='qa-panel';panel.className='qa-panel';panel.hidden=true;panel.setAttribute('role','region');panel.setAttribute('aria-labelledby','qa-title');
+  panel.innerHTML='<header class="qa-head"><strong id="qa-title"></strong><button type="button" class="qa-clear"></button><button type="button" class="qa-close">×</button></header><p class="qa-notice"></p><div class="qa-log" role="log" aria-live="polite" aria-relevant="additions text"></div><div class="qa-suggest"></div><p class="qa-status" role="status"></p><form class="qa-form"><label class="qa-input-label" for="qa-input"></label><textarea id="qa-input" rows="2" maxlength="3000" required></textarea><button class="qa-send" type="submit"></button></form>';
+  host.append(panel,launch);document.body.appendChild(host);
+  const q = s=>panel.querySelector(s), input=q('textarea'), log=q('.qa-log'), status=q('.qa-status');
+  function message(role,text) {const el=document.createElement('div');el.className='qa-message qa-'+role;el.textContent=text;log.appendChild(el);log.scrollTop=log.scrollHeight;}
+  function labels() {
+    const t=getCopy();launch.setAttribute('aria-label',t.open);q('#qa-title').textContent=t.title;q('.qa-clear').textContent=t.clear;q('.qa-close').setAttribute('aria-label',t.close);q('.qa-notice').textContent=t.notice;input.placeholder=t.placeholder;q('.qa-input-label').textContent=t.placeholder;q('.qa-send').textContent=t.send;
+    const suggestions=q('.qa-suggest');suggestions.replaceChildren();
+    if(!history.length) for(const text of t.suggest){const b=document.createElement('button');b.type='button';b.textContent=text;b.onclick=()=>{input.value=text;input.focus()};suggestions.appendChild(b)}
+  }
+  function open(value){panel.hidden=!value;launch.setAttribute('aria-expanded',String(value));if(value){labels();if(!log.children.length)message('assistant',getCopy().hello);input.focus()}else launch.focus()}
+  launch.onclick=()=>open(panel.hidden);q('.qa-close').onclick=()=>open(false);
+  panel.addEventListener('keydown',e=>{if(e.key==='Escape')open(false)});
+  q('.qa-clear').onclick=()=>{controller?.abort();history=[];log.replaceChildren();message('assistant',getCopy().hello);status.textContent='';labels();input.focus()};
+  q('form').onsubmit=async e=>{
+    e.preventDefault();const text=input.value.trim();if(!text || pending)return;
+    const endpoint=window.QALAM_ASSISTANT_URL;
+    if(!endpoint){status.textContent=getCopy().setup;return;}
+    try {if(new URL(endpoint).protocol!=='https:' && !['localhost','127.0.0.1'].includes(new URL(endpoint).hostname))throw Error();}catch{status.textContent=getCopy().setup;return;}
+    pending=true;controller=new AbortController();const current=controller;
+    const timeout=setTimeout(()=>current.abort(),35000);
+    input.value='';message('user',text);status.textContent=getCopy().wait;q('.qa-send').disabled=true;q('.qa-clear').disabled=true;q('.qa-suggest').replaceChildren();
+    const messages=[...history.slice(-8),{role:'user',content:text}];
+    // Keep a complete recent turn window within the server context budget.
+    while(messages.length>1 && messages.reduce((n,m)=>n+m.content.length,0)>14000)messages.shift();
+    try {
+      const res=await fetch(endpoint,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages}),signal:current.signal});
+      if(!res.ok){const err=new Error('request');err.status=res.status;throw err;}
+      const data=await res.json();if(typeof data.text!=='string' || !data.text.trim())throw Error('empty');
+      history=[...messages,{role:'assistant',content:data.text.slice(0,3000)}];message('assistant',data.text);status.textContent='';
+    }catch(err){status.textContent=err.status===429?getCopy().limit:getCopy().error;input.value=text;}
+    finally{clearTimeout(timeout);pending=false;q('.qa-send').disabled=false;q('.qa-clear').disabled=false;if(!panel.hidden)input.focus();}
+  };
+  labels();
+})();
+</script></body></html>
